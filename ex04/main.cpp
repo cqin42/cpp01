@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cqin <cqin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: christine <christine@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:34:55 by cqin              #+#    #+#             */
-/*   Updated: 2023/11/09 18:28:26 by cqin             ###   ########.fr       */
+/*   Updated: 2023/11/09 22:21:20 by christine        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,6 @@ int parse(int argc)
 	return (0);
 }
 
-// void replaceOccurence(std::fstream my_file, std::fstream my_file_replace, char *argv2, char *argv3)
-// {
-// 	std::string occurence = argv2;
-// 	std::string replace = argv3;
-
-// 	size_t pos = 0;
-// 	std::string str;
-// 	while (getline(my_file, str))
-// 	{
-// 		pos = str.find(occurence, pos);
-// 		if (pos == std::string::npos)
-// 			my_file_replace << str;
-// 		else
-// 		{
-// 			str.erase(pos, occurence.length());
-// 			str.insert(pos, replace);
-// 			my_file_replace << str;
-// 		}
-// 	}
-// 	my_file.close();
-// 	my_file_replace.close();
-// }
 
 int main(int argc, char **argv)
 {
@@ -85,6 +63,7 @@ int main(int argc, char **argv)
 			str.insert(pos, replace);
 			my_file_replace << str;
 		}
+		my_file_replace << "\n";
 	}
 
 	my_file.close();
