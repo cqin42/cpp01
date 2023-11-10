@@ -6,7 +6,7 @@
 /*   By: christine <christine@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:34:55 by cqin              #+#    #+#             */
-/*   Updated: 2023/11/09 22:21:20 by christine        ###   ########.fr       */
+/*   Updated: 2023/11/10 19:31:31 by christine        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,18 @@ int main(int argc, char **argv)
 	std::string str;
 	while (getline(my_file, str))
 	{
+
 		pos = str.find(argv[2], pos);
 		if (pos == std::string::npos)
 			my_file_replace << str;
 		else
 		{
-			str.erase(pos, occurence.length());
-			str.insert(pos, replace);
+			while (pos != std::string::npos)
+			{
+				str.erase(pos, occurence.length());
+				str.insert(pos, replace);
+				pos = str.find(argv[2], pos);
+			}
 			my_file_replace << str;
 		}
 		my_file_replace << "\n";

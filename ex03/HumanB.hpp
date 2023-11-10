@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cqin <cqin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: christine <christine@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:56:30 by cqin              #+#    #+#             */
-/*   Updated: 2023/11/08 17:19:36 by cqin             ###   ########.fr       */
+/*   Updated: 2023/11/10 19:16:32 by christine        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 class HumanB
 {
 private:
-	Weapon *weapn;
-	std::string name;
+	Weapon *_weapn;
+	std::string _name;
 
 public:
 	HumanB(std::string str);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cqin <cqin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: christine <christine@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:01:19 by cqin              #+#    #+#             */
-/*   Updated: 2023/11/09 17:17:08 by cqin             ###   ########.fr       */
+/*   Updated: 2023/11/10 19:18:20 by christine        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 HumanB::HumanB(std::string str)
 {
-	this->name = str;
+	this->_name = str;
+	this->_weapn = NULL;
 }
 
 HumanB::~HumanB()
@@ -22,17 +23,18 @@ HumanB::~HumanB()
 }
 void HumanB::attack() const
 {
-	if (this->weapn)
+	if (this->_weapn == NULL)
 	{
-		std::cout << this->name << " attacks with their ";
-		std::cout << weapn->getType() << std::endl;
+		std::cout << this->_name << " cannot attack. There is no any weapon" << std::endl;
 	}
-	else if (!this->weapn)
-		std::cout << this->name << " cannot attack. There is no any weapon" << std::endl;
-
+	else
+	{
+		std::cout << this->_name << " attacks with their ";
+		std::cout << _weapn->getType() << std::endl;
+	}
 }
 
 void HumanB::setWeapon(Weapon &w)
 {
-	this->weapn = &w;
+	this->_weapn = &w;
 }
