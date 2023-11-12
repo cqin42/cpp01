@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christine <christine@student.42.fr>        +#+  +:+       +#+        */
+/*   By: cqin <cqin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:42:54 by christine         #+#    #+#             */
-/*   Updated: 2023/11/07 15:05:49 by christine        ###   ########.fr       */
+/*   Updated: 2023/11/12 13:51:12 by cqin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int main(void)
 	std::cout << "\33[0m";
 
 	horde_zombie = zombieHorde(nb, str);
-	for(int i=0; i < nb; i++)
+	for (int i = 0; i < nb; i++)
 	{
-		std::cout << "index: " << i << " ";
+		std::cout << "index: " << i << " -> ";
 		horde_zombie[i].announce();
 	}
-	delete [] horde_zombie;
+	delete[] horde_zombie;
 }
