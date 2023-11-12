@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christine <christine@student.42.fr>        +#+  +:+       +#+        */
+/*   By: cqin <cqin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:34:55 by cqin              #+#    #+#             */
-/*   Updated: 2023/11/10 19:31:31 by christine        ###   ########.fr       */
+/*   Updated: 2023/11/12 16:44:36 by cqin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int parse(int argc)
 	}
 	return (0);
 }
-
 
 int main(int argc, char **argv)
 {
@@ -64,7 +63,8 @@ int main(int argc, char **argv)
 			{
 				str.erase(pos, occurence.length());
 				str.insert(pos, replace);
-				pos = str.find(argv[2], pos);
+				pos = str.find(&str[pos + 1], pos);
+				// std::cout << "lol" << std::endl;
 			}
 			my_file_replace << str;
 		}
